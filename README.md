@@ -13,9 +13,7 @@ module "gsuite" {
 
   # Add the DKIM config from Google. Note the escaped double quotes only in the
   middle, as per https://github.com/hashicorp/terraform/issues/10048
-  gmail_domainkey = <<-EODKIM
-"v=DKIM1; k=rsa; p=AVERYLONGSTRING\" \"ANDANOTHER"
-EODKIM
+  gmail_domainkey = "v=DKIM1; k=rsa; p=A-long-Base64-encoded-string\" \"and-another-long-string""
 
   # Each of these will have a subdomain configured for them,
   # e.g. 'calendar.example.com' -> GSuite Calendar
