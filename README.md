@@ -4,7 +4,7 @@
 
 ```
 module "gsuite" {
-  source  = "JackDanger/terraform-module-gsuite-route53"
+  source = "github.com/JackDanger/terraform-module-gsuite-route53"
 
   domain = "example.com"
   gmail_domainkey = <<-EODKIM
