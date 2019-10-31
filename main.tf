@@ -17,7 +17,7 @@ resource "aws_route53_record" "gsuite" {
 # Add the MX records
 resource "aws_route53_record" "mx" {
   zone_id = "${data.aws_route53_zone.selected.zone_id}"
-  name    = "@"
+  name    = ""
   type    = "MX"
   ttl     = "3600"
   records = [
@@ -32,7 +32,7 @@ resource "aws_route53_record" "mx" {
 # Configure SPF
 resource "aws_route53_record" "spf" {
   zone_id = "${data.aws_route53_zone.selected.zone_id}"
-  name    = "@"
+  name    = ""
   type    = "SPF"
   ttl     = "3600"
   records = ["v=spf1 include:_spf.google.com ~all"]
@@ -41,7 +41,7 @@ resource "aws_route53_record" "spf" {
 # Add SPF TXT
 resource "aws_route53_record" "txt" {
   zone_id = "${data.aws_route53_zone.selected.zone_id}"
-  name    = "@"
+  name    = ""
   type    = "TXT"
   ttl     = "3600"
   records = ["v=spf1 include:_spf.google.com ~all"]
